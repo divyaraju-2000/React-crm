@@ -10,7 +10,7 @@ Axios.interceptors.request.use(
     const authHeaders =
       token && !isExternal ? { Authorization: `${token}` } : {};
     return {
-      baseURL: "http://localhost:4000",
+      baseURL: "https://samplecrm.herokuapp.com",
       ...config,
       headers: {
         ...authHeaders,

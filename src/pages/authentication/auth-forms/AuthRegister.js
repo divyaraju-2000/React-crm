@@ -52,7 +52,7 @@ const AuthRegister = () => {
     }, []);
 
     const onHandleSubmit=(data)=>{
-        axios.post("http://localhost:4000/register",data).then(()=>{navigate("/")})
+        axios.post("https://samplecrm.herokuapp.com/register",data).then(()=>{navigate("/")})
 
     }
 

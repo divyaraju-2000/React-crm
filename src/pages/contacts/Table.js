@@ -128,7 +128,7 @@ export function EnhancedTableHead(props) {
     onRequestSort(event, property);
   };
 
-  axios.get("http://localhost:4000/getContacts").then((data)=>{console.log(data)})
+  axios.get("https://samplecrm.herokuapp.com/getContacts").then((data)=>{console.log(data)})
 
 
   return (

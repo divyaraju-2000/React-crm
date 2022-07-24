@@ -50,7 +50,7 @@ const CreateContact = () => {
     }, []);
 
     const onHandleSubmit=(data)=>{
-        axios.post("http://localhost:4000/createContacts",data).then(()=>{navigate("/")})
+        axios.post("https://samplecrm.herokuapp.com/createContacts",data).then(()=>{navigate("/")})
 
     }
 

@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   // call this function when you want to authenticate the user
   const login = async (data) => {
-    axios.post('http://localhost:4000/login/auth', data)
+    axios.post('https://samplecrm.herokuapp.com/login/auth', data)
     .then(response =>  {
       setUser(response.data.token);
       navigate("/dashboard");

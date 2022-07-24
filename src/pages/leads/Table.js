@@ -21,7 +21,7 @@ import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
-import { Button, Grid, Stack } from "../../../node_modules/@mui/material/index";
+import { Button, Grid } from "../../../node_modules/@mui/material/index";
 import Axios  from "../../../node_modules/axios/index";
 import "../../api"
 function createData(name, calories, fat, carbs, protein) {

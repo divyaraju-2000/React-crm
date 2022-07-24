@@ -1,4 +1,4 @@
-import Axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import Axios from 'axios';
 
 
 

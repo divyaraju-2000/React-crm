@@ -4,9 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // material-ui
 import {
     Button,
-    Checkbox,
-    Divider,
-    FormControlLabel,
+ 
     FormHelperText,
     Grid,
     Link,
@@ -15,7 +13,7 @@ import {
     InputLabel,
     OutlinedInput,
     Stack,
-    Typography
+   
 } from '@mui/material';
 
 // third party
@@ -23,7 +21,6 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 
 // project import
-import FirebaseSocial from './FirebaseSocial';
 import AnimateButton from 'components/@extended/AnimateButton';
 
 // assets
@@ -42,7 +39,7 @@ const AuthLogin = () => {
         if(auth.user){
             navigate("/dashboard/default")
         }
-    },[])
+    },[auth.user,navigate])
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword);
@@ -65,7 +62,7 @@ const AuthLogin = () => {
                     email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
                     password: Yup.string().max(255).required('Password is required')
                 })}
-                onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
+                onSubmit={async (values) => {
 
                         auth.login(values)
                 }}

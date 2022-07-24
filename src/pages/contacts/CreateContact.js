@@ -1,17 +1,13 @@
-import { useEffect, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
 // material-ui
 import {
-    Box,
+
     Button,
-    Divider,
-    FormControl,
+
     FormHelperText,
     Grid,
-    Link,
-    IconButton,
-    InputAdornment,
+
     InputLabel,
     OutlinedInput,
     Stack,
@@ -25,30 +21,28 @@ import { Formik } from 'formik';
 // project import
 
 import AnimateButton from 'components/@extended/AnimateButton';
-import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
 // assets
-import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
 import axios from '../../../node_modules/axios/index';
 
 // ============================|| FIREBASE - REGISTER ||============================ //
 
 const CreateContact = () => {
-    const [level, setLevel] = useState();
+    // const [level, setLevel] = useState();
     const navigate = useNavigate()
-    const [showPassword, setShowPassword] = useState(false);
-    const handleClickShowPassword = () => {
-        setShowPassword(!showPassword);
-    };
+    // const [showPassword, setShowPassword] = useState(false);
+    // const handleClickShowPassword = () => {
+    //     setShowPassword(!showPassword);
+    // };
 
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
+    // const handleMouseDownPassword = (event) => {
+    //     event.preventDefault();
+    // };
 
-    const changePassword = (value) => {
-        const temp = strengthIndicator(value);
-        setLevel(strengthColor(temp));
+    const changePassword = () => {
+        // const temp = strengthIndicator(value);
+        // setLevel(strengthColor(temp));
     };
 
     useEffect(() => {
@@ -56,7 +50,7 @@ const CreateContact = () => {
     }, []);
 
     const onHandleSubmit=(data)=>{
-        axios.post("http://localhost:4000/createContacts",data).then((data)=>{navigate("/")})
+        axios.post("http://localhost:4000/createContacts",data).then(()=>{navigate("/")})
 
     }
 
@@ -93,7 +87,7 @@ const CreateContact = () => {
                     phone: Yup.number().required('Phone number is required'),
                     email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
                 })}
-                onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
+                onSubmit={async (values) => {
                     onHandleSubmit(values)
                 }}
             >

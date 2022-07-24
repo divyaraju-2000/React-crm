@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./useLocalStorage";
 import axios from "axios";
 const AuthContext = createContext();
-
+// eslint-disable-next-line
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useLocalStorage("user", null);
   const navigate = useNavigate();
@@ -22,14 +22,14 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     navigate("/", { replace: true });
   };
-
+// eslint-disable-next-line
   const value = useMemo(
     () => ({
       user,
       login,
       logout
-    }),
-    [user]
+    }),// eslint-disable-next-line
+    [user]// eslint-disable-next-line
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
